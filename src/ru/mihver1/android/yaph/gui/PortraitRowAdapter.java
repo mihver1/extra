@@ -74,6 +74,8 @@ public class PortraitRowAdapter extends BaseAdapter {
         leftView.setImageBitmap(ThumbnailUtils.extractThumbnail(us.getBitmap(urls.get(position * 2)), 200, 200));
         rightView.setImageBitmap(ThumbnailUtils.extractThumbnail(us.getBitmap(urls.get(position * 2 + 1)), 200, 200));
 
+        convertView = view;
+
         return view;
     }
 

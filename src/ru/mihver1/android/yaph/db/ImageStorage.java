@@ -1,5 +1,6 @@
 package ru.mihver1.android.yaph.db;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -23,6 +24,7 @@ public class ImageStorage {
     Map<String, Bitmap> cache = new HashMap<String, Bitmap>();
 
     public  Bitmap getBitmap(String s) {
+        Log.d("YOLO", "Get "+s);
         if(cache.containsKey(s)) {
             return cache.get(s);
         } else {
@@ -68,6 +70,7 @@ public class ImageStorage {
         @Override
         protected void onPostExecute(Bitmap result) {
             cache.put(urlT, result);
+            Log.d("YOLO", urlT+" got");
         }
     }
 }

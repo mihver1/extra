@@ -3,4 +3,6 @@
     <string name="app_name">flickrtop</string>
     <string name="flickr_key">513b747dd5b952805219049941025b55</string>
     <string name="flickr_secret">9989eac5919745d4</string>
+    <string name="SQL_CREATE">CREATE TABLE URLS (URL TEXT PRIMARY KEY, IMAGE BLOB)</string>
+    <string name="update">Update</string>
 </resources>

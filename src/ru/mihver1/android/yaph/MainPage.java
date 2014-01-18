@@ -3,12 +3,15 @@ package ru.mihver1.android.yaph;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
 import android.util.Log;
+import android.view.Display;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -19,7 +22,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import ru.mihver1.android.yaph.db.ImageStorage;
+import ru.mihver1.android.yaph.gui.LandscapeRowAdapter;
 import ru.mihver1.android.yaph.gui.PortraitRowAdapter;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -44,34 +47,21 @@ public class MainPage extends Activity {
     }
 
     ArrayList<String> urls;
+    ArrayList<String> fullscreenUrls = new ArrayList<String>();
 
-    private void getImagesFromFlickrToDB(ImageStorage is) throws ExecutionException, InterruptedException {
-        FlickrTopImages fti = new FlickrTopImages();
+    public void getImagesFromFlickrToDB() throws ExecutionException, InterruptedException {
         Log.d("YOLO", "test");
-        fti.setCtx(this, is);
-        fti.execute(FLICKR_API_KEY);
+        new FlickrTopImages().execute(FLICKR_API_KEY);
         Log.d("YOLO", "test");
-
     }
 
     class FlickrTopImages extends AsyncTask<String, Void, ArrayList<String>> {
-
-        Activity ctx;
-        ImageStorage us;
-
-        void setCtx(Activity ctx1, ImageStorage is) {
-            ctx = ctx1;
-            us = is;
-        }
-
-
-
         @Override
         protected ArrayList<String> doInBackground(String... params) {
             ArrayList<String> answer = new ArrayList<String>();
             String api_key = params[0];
             String request_string = "http://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key="
-                    +api_key+"&per_page=20&extras=url_l";
+                    +api_key+"&per_page=20&extras=url_m,url_l";
             HttpGet uri = new HttpGet(request_string);
             DefaultHttpClient client = new DefaultHttpClient();
             HttpResponse resp = null;
@@ -105,9 +95,9 @@ public class MainPage extends Activity {
                         Node node = list.item(i);
                         if(node instanceof Element) {
                             Element child = (Element) node;
-                            String url = child.getAttribute("url_l");
+                            String url = child.getAttribute("url_m");
                             answer.add(url);
-
+                            fullscreenUrls.add(child.getAttribute("url_l"));
                         }
                     }
                 }
@@ -129,14 +119,18 @@ public class MainPage extends Activity {
             Log.d("YOLO", "Size " + Integer.toString(strings.size()));
 
             ListView listView = (ListView) findViewById(R.id.listView);
+
             if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-                PortraitRowAdapter adapter = new PortraitRowAdapter(ctx, urls, us);
+                PortraitRowAdapter adapter = new PortraitRowAdapter(MainPage.this, urls, fullscreenUrls, cache);
+                listView.setAdapter(adapter);
+            } else {
+                LandscapeRowAdapter adapter = new LandscapeRowAdapter(MainPage.this, urls, fullscreenUrls, cache);
                 listView.setAdapter(adapter);
             }
         }
     }
 
-    public ImageStorage is = new ImageStorage();
+    public IconCache cache = new IconCache();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -145,9 +139,26 @@ public class MainPage extends Activity {
 
         FLICKR_API_KEY = getString(R.string.flickr_key);
 
+
+        ListView listView = (ListView) findViewById(R.id.listView);
+        View header = getLayoutInflater().inflate(R.layout.header, null);
+        listView.addHeaderView(header);
+        Button btn = (Button)header.findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    getImagesFromFlickrToDB();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         if(isOnline()) {
             try {
-                getImagesFromFlickrToDB(is);
+                getImagesFromFlickrToDB();
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {

@@ -3,50 +3,50 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <View
+              android:layout_height="wrap_content">
+    <Space
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="4"
             />
-    <ru.mihver1.android.yaph.gui.WebImageView
+    <ImageView
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="20"
             android:id="@+id/leftImage"/>
-    <View
+    <Space
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="4"
             />
-    <ru.mihver1.android.yaph.gui.WebImageView
+    <ImageView
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="20"
             android:id="@+id/leftCenterImage"/>
-    <View
+    <Space
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="4"
             />
-    <ru.mihver1.android.yaph.gui.WebImageView
+    <ImageView
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="20"
             android:id="@+id/rightCenterImage"/>
-    <View
+    <Space
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="4"
             />
-    <ru.mihver1.android.yaph.gui.WebImageView
+    <ImageView
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="20"
             android:id="@+id/rightImage"/>
-    <View
+    <Space
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="4"
             />
 </LinearLayout>

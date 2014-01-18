@@ -20,14 +20,14 @@ import java.util.ArrayList;
  * Created by mihver1 on 18.01.14.
  */
 
-public class PortraitRowAdapter extends BaseAdapter {
+public class LandscapeRowAdapter extends BaseAdapter {
     LayoutInflater inflater;
     ArrayList<String> urls, fullscreen;
     ArrayList<DownloadTask> tasks = new ArrayList<DownloadTask>();
     IconCache cache;
     private int width;
 
-    public PortraitRowAdapter(Context context, ArrayList<String> urls, ArrayList<String> fullscreen, IconCache cache) {
+    public LandscapeRowAdapter(Context context, ArrayList<String> urls, ArrayList<String> fullscreen, IconCache cache) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
@@ -41,16 +41,16 @@ public class PortraitRowAdapter extends BaseAdapter {
         new View.OnLayoutChangeListener() {
             @Override
             public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                 for(DownloadTask t: tasks) {
-                     t.cancel(true);
-                 }
+                for(DownloadTask t: tasks) {
+                    t.cancel(true);
+                }
             }
         };
     }
 
     @Override
     public int getCount() {
-        return urls.size() / 2;
+        return urls.size() / 4;
     }
 
     @Override
@@ -70,21 +70,38 @@ public class PortraitRowAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.rowlayout, parent, false);
             holder = new ViewHolder(
                     (ImageView) view.findViewById(R.id.leftImage),
+                    (ImageView) view.findViewById(R.id.leftCenterImage),
+                    (ImageView) view.findViewById(R.id.rightCenterImage),
                     (ImageView) view.findViewById(R.id.rightImage)
             );
             view.setTag(holder);
+
             final int temp = position;
             holder.left.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", fullscreen.get(temp * 2));
+                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", fullscreen.get(temp * 4));
+                    v.getContext().startActivity(myIntent);
+                }
+            });
+            holder.leftCenter.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", fullscreen.get(temp * 4 + 1));
+                    v.getContext().startActivity(myIntent);
+                }
+            });
+            holder.rightCenter.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", fullscreen.get(temp * 4 + 2));
                     v.getContext().startActivity(myIntent);
                 }
             });
             holder.right.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", fullscreen.get(temp * 2 + 1));
+                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", fullscreen.get(temp * 4 + 3));
                     v.getContext().startActivity(myIntent);
                 }
             });
@@ -92,15 +109,17 @@ public class PortraitRowAdapter extends BaseAdapter {
             holder = (ViewHolder)view.getTag();
         }
 
-        loadBitmap(holder.left, urls.get(position * 2));
-        loadBitmap(holder.right, urls.get(position * 2 + 1));
+        loadBitmap(holder.left, urls.get(position * 4));
+        loadBitmap(holder.leftCenter, urls.get(position * 4 + 1));
+        loadBitmap(holder.rightCenter, urls.get(position * 4 + 2));
+        loadBitmap(holder.right, urls.get(position * 4 + 3));
 
         return view;
     }
 
     private void loadBitmap(ImageView view, String url) {
         view.setTag(url);
-        Bitmap bm = ThumbnailUtils.extractThumbnail(cache.getBitmapFromCache(url), (int)(width * 0.35), (int)(width * 0.35));
+        Bitmap bm = ThumbnailUtils.extractThumbnail(cache.getBitmapFromCache(url), (int)(width * 0.2), (int)(width * 0.2));
         if (bm != null) {
             view.setImageBitmap(bm);
         } else {
@@ -112,10 +131,14 @@ public class PortraitRowAdapter extends BaseAdapter {
 
     private static class ViewHolder {
         ImageView left;
+        ImageView leftCenter;
+        ImageView rightCenter;
         ImageView right;
 
-        ViewHolder(ImageView l, ImageView r) {
+        ViewHolder(ImageView l, ImageView lc, ImageView rc, ImageView r) {
             left = l;
+            leftCenter = lc;
+            rightCenter = rc;
             right = r;
         }
     }
@@ -141,7 +164,7 @@ public class PortraitRowAdapter extends BaseAdapter {
         @Override
         protected void onPostExecute(Bitmap bitmap) {
             if (view.getTag() == url) {
-                view.setImageBitmap(ThumbnailUtils.extractThumbnail(bitmap, (int)(width * 0.35), (int)(width * 0.35)));
+                view.setImageBitmap(ThumbnailUtils.extractThumbnail(bitmap, (int)(width * 0.2), (int)(width * 0.2)));
             }
         }
     }

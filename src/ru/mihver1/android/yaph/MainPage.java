@@ -21,6 +21,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import ru.mihver1.android.yaph.db.ImageStorage;
 import ru.mihver1.android.yaph.gui.PortraitRowAdapter;
 import ru.mihver1.android.yaph.gui.WebImageView;
 
@@ -56,10 +57,10 @@ public class MainPage extends Activity {
     ArrayList<WebImageView> images;
     ArrayList<String> urls;
 
-    private void getImagesFromFlickrToDB() throws ExecutionException, InterruptedException {
+    private void getImagesFromFlickrToDB(ImageStorage is) throws ExecutionException, InterruptedException {
         fti = new FlickrTopImages();
         Log.d("YOLO", "test");
-        fti.setCtx(this);
+        fti.setCtx(this, is);
         fti.execute(FLICKR_API_KEY);
         Log.d("YOLO", "test");
 
@@ -68,10 +69,14 @@ public class MainPage extends Activity {
     class FlickrTopImages extends AsyncTask<String, Void, ArrayList<String>> {
 
         Activity ctx;
+        ImageStorage us;
 
-        void setCtx(Activity ctx1) {
+        void setCtx(Activity ctx1, ImageStorage is) {
             ctx = ctx1;
+            us = is;
         }
+
+
 
         @Override
         protected ArrayList<String> doInBackground(String... params) {
@@ -132,11 +137,13 @@ public class MainPage extends Activity {
 
             ListView listView = (ListView) findViewById(R.id.listView);
             if(getResources().getConfiguration().orientation == getResources().getConfiguration().ORIENTATION_PORTRAIT) {
-                PortraitRowAdapter adapter = new PortraitRowAdapter(ctx, urls);
+                PortraitRowAdapter adapter = new PortraitRowAdapter(ctx, urls, us);
                 listView.setAdapter(adapter);
             }
         }
     }
+
+    public ImageStorage is = new ImageStorage();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -147,7 +154,7 @@ public class MainPage extends Activity {
 
         if(isOnline()) {
             try {
-                getImagesFromFlickrToDB();
+                getImagesFromFlickrToDB(is);
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {

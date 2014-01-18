@@ -1,11 +1,14 @@
 package ru.mihver1.android.yaph.gui;
 
 import android.app.Activity;
+import android.media.ThumbnailUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import ru.mihver1.android.yaph.R;
+import ru.mihver1.android.yaph.db.ImageStorage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +22,12 @@ public class PortraitRowAdapter extends BaseAdapter {
     List<PortraitRowModel> content = new ArrayList<PortraitRowModel>();
     Activity context;
     ArrayList<String> urls;
+    ImageStorage us;
 
-    public PortraitRowAdapter(Activity ctx, ArrayList<String> urls) {
+    public PortraitRowAdapter(Activity ctx, ArrayList<String> urls, ImageStorage is) {
         context = ctx;
         this.urls = urls;
+        us = is;
     }
 
 
@@ -34,21 +39,7 @@ public class PortraitRowAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        ViewHolder holder;
-        LayoutInflater inflater = context.getLayoutInflater();
-        View view = inflater.inflate(R.layout.rowlayout, null);
-        WebImageView leftView = (WebImageView) view.findViewById(R.id.leftImage);
-        WebImageView rightView = (WebImageView) view.findViewById(R.id.rightImage);
-        ViewHolder viewHolder = new ViewHolder(leftView, rightView);
-        view.setTag(viewHolder);
-        holder = viewHolder;
-        holder = (ViewHolder) view.getTag();
-        holder.left.setPlaceholderImage(R.drawable.ic_launcher);
-        holder.right.setPlaceholderImage(R.drawable.ic_launcher);
-        holder.left.setImageUrl(urls.get(position * 2));
-        holder.right.setImageUrl(urls.get(position * 2 + 1));
-
-        return view;
+        return position;
     }
 
     @Override
@@ -57,10 +48,10 @@ public class PortraitRowAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        WebImageView left;
-        WebImageView right;
+        ImageView left;
+        ImageView right;
 
-        ViewHolder(WebImageView l, WebImageView r) {
+        ViewHolder(ImageView l, ImageView r) {
             left = l;
             right = r;
         }
@@ -70,17 +61,18 @@ public class PortraitRowAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         LayoutInflater inflater = context.getLayoutInflater();
-        View view = inflater.inflate(R.layout.rowlayout, null);
-        WebImageView leftView = (WebImageView) view.findViewById(R.id.leftImage);
-        WebImageView rightView = (WebImageView) view.findViewById(R.id.rightImage);
+        View view = inflater.inflate(R.layout.rowlayout, parent, false);
+        ImageView leftView = (ImageView) view.findViewById(R.id.leftImage);
+        ImageView rightView = (ImageView) view.findViewById(R.id.rightImage);
         ViewHolder viewHolder = new ViewHolder(leftView, rightView);
         view.setTag(viewHolder);
         holder = viewHolder;
         holder = (ViewHolder) view.getTag();
-        holder.left.setPlaceholderImage(R.drawable.ic_launcher);
-        holder.right.setPlaceholderImage(R.drawable.ic_launcher);
-        holder.left.setImageUrl(urls.get(position * 2));
-        holder.right.setImageUrl(urls.get(position * 2 + 1));
+        leftView.setImageResource(R.drawable.ic_launcher);
+        rightView.setImageResource(R.drawable.ic_launcher);
+
+        leftView.setImageBitmap(ThumbnailUtils.extractThumbnail(us.getBitmap(urls.get(position * 2)), 200, 200));
+        rightView.setImageBitmap(ThumbnailUtils.extractThumbnail(us.getBitmap(urls.get(position * 2 + 1)), 200, 200));
 
         return view;
     }

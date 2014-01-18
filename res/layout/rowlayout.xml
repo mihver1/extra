@@ -9,7 +9,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="10"
             />
-    <ru.mihver1.android.yaph.gui.WebImageView
+    <ImageView
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="35"
@@ -19,7 +19,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="10"
             />
-    <ru.mihver1.android.yaph.gui.WebImageView
+    <ImageView
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="35"

@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.media.ThumbnailUtils;
 import android.os.AsyncTask;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.ImageView;
 import org.apache.http.util.ByteArrayBuffer;
 
@@ -27,6 +28,7 @@ public class WebImageView extends ImageView {
 
     private Drawable placeholder, image;
     private Bitmap original, cropped;
+    private static int lock = 0;
 
     public WebImageView(Context context) {
         super(context);
@@ -64,7 +66,10 @@ public class WebImageView extends ImageView {
 
         @Override
         protected Bitmap doInBackground(String... params) {
+
+            Log.d("YOLO", "ASYNC");
             String url = params[0];
+            Log.d("YOLO", "**"+url+"**");
             try {
                 URLConnection conn = (new URL(url)).openConnection();
                 InputStream is = conn.getInputStream();
@@ -87,7 +92,7 @@ public class WebImageView extends ImageView {
         @Override
         protected void onPostExecute(Bitmap result) {
             original = result;
-            cropped = ThumbnailUtils.extractThumbnail(result, 100, 100);
+            cropped = ThumbnailUtils.extractThumbnail(result, 200, 200);
             image = new BitmapDrawable(getResources(), cropped);
             if (image != null) {
                 setImageDrawable(image);

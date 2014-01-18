@@ -1,18 +1,10 @@
 package ru.mihver1.android.yaph.db;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.ThumbnailUtils;
 import android.os.AsyncTask;
 import android.util.Log;
-import org.apache.http.util.ByteArrayBuffer;
-
-import java.io.BufferedInputStream;
-import java.io.InputStream;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,19 +41,7 @@ public class ImageStorage {
             Log.d("YOLO", "**"+url+"**");
             urlT = url;
             try {
-                URLConnection conn = (new URL(url)).openConnection();
-                InputStream is = conn.getInputStream();
-                BufferedInputStream bis = new BufferedInputStream(is);
-
-                ByteArrayBuffer baf = new ByteArrayBuffer(50);
-                int current = 0;
-                while ((current = bis.read()) != -1) {
-                    baf.append((byte)current);
-                }
-
-                byte[] imageData = baf.toByteArray();
-                return BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
-
+                return BitmapFactory.decodeStream(new URL(url).openStream());
             } catch (Exception e) {
                 return null;
             }

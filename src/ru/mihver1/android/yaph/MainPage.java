@@ -13,6 +13,7 @@ import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.HttpGet;
@@ -22,6 +23,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import ru.mihver1.android.yaph.db.ImageStorage;
+import ru.mihver1.android.yaph.db.UrlRecord;
 import ru.mihver1.android.yaph.gui.LandscapeRowAdapter;
 import ru.mihver1.android.yaph.gui.PortraitRowAdapter;
 
@@ -48,6 +51,7 @@ public class MainPage extends Activity {
 
     ArrayList<String> urls;
     ArrayList<String> fullscreenUrls = new ArrayList<String>();
+    ArrayList<UrlRecord> session_cache = null;
 
     public void getImagesFromFlickrToDB() throws ExecutionException, InterruptedException {
         fullscreenUrls.clear();
@@ -124,16 +128,17 @@ public class MainPage extends Activity {
             ListView listView = (ListView) findViewById(R.id.listView);
 
             if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-                PortraitRowAdapter adapter = new PortraitRowAdapter(MainPage.this, urls, fullscreenUrls, cache);
+                PortraitRowAdapter adapter = new PortraitRowAdapter(MainPage.this, urls, fullscreenUrls, cache, null);
                 listView.setAdapter(adapter);
             } else {
-                LandscapeRowAdapter adapter = new LandscapeRowAdapter(MainPage.this, urls, fullscreenUrls, cache);
+                LandscapeRowAdapter adapter = new LandscapeRowAdapter(MainPage.this, urls, fullscreenUrls, cache, null);
                 listView.setAdapter(adapter);
             }
         }
     }
 
-    public IconCache cache = new IconCache();
+    public IconCache cache;
+    public ImageStorage database;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -142,6 +147,8 @@ public class MainPage extends Activity {
 
         FLICKR_API_KEY = getString(R.string.flickr_key);
 
+        database = new ImageStorage(this);
+        cache = new IconCache(database);
 
         ListView listView = (ListView) findViewById(R.id.listView);
         View header = getLayoutInflater().inflate(R.layout.header, null);
@@ -151,7 +158,10 @@ public class MainPage extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    getImagesFromFlickrToDB();
+                    if(isOnline()) {
+                        database.dropCache();
+                        getImagesFromFlickrToDB();
+                    }
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
@@ -161,11 +171,25 @@ public class MainPage extends Activity {
         });
         if(isOnline()) {
             try {
+                database.dropCache();
                 getImagesFromFlickrToDB();
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+        } else {
+            session_cache = database.getCache();
+            if(session_cache != null) {
+                if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    PortraitRowAdapter adapter = new PortraitRowAdapter(MainPage.this, null, null, null, session_cache);
+                    listView.setAdapter(adapter);
+                } else {
+                    LandscapeRowAdapter adapter = new LandscapeRowAdapter(MainPage.this, null, null, null, session_cache);
+                    listView.setAdapter(adapter);
+                }
+            } else {
+                Toast.makeText(this, R.string.nodata, 2).show();
             }
         }
 

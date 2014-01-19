@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import ru.mihver1.android.yaph.IconCache;
 import ru.mihver1.android.yaph.ImagePage;
 import ru.mihver1.android.yaph.R;
+import ru.mihver1.android.yaph.db.UrlRecord;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,10 +25,13 @@ public class LandscapeRowAdapter extends BaseAdapter {
     LayoutInflater inflater;
     ArrayList<String> urls, fullscreen;
     ArrayList<DownloadTask> tasks = new ArrayList<DownloadTask>();
+    ArrayList<UrlRecord> sys_cache = null;
     IconCache cache;
     private int width;
 
-    public LandscapeRowAdapter(Context context, ArrayList<String> urls, ArrayList<String> fullscreen, IconCache cache) {
+    boolean offline = false;
+
+    public LandscapeRowAdapter(Context context, ArrayList<String> urls, ArrayList<String> fullscreen, IconCache cache, ArrayList<UrlRecord> system_cache) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
@@ -37,6 +41,11 @@ public class LandscapeRowAdapter extends BaseAdapter {
         this.urls = urls;
         this.fullscreen = fullscreen;
         this.cache = cache;
+
+        if(system_cache != null) {
+            sys_cache = system_cache;
+            offline = true;
+        }
 
         new View.OnLayoutChangeListener() {
             @Override
@@ -50,12 +59,18 @@ public class LandscapeRowAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return urls.size() / 4;
+        if(! offline)
+            return urls.size() / 4;
+        else
+            return sys_cache.size() / 4;
     }
 
     @Override
     public String getItem(int position) {
-        return urls.get(position);
+        if(! offline)
+            return urls.get(position);
+        else
+            return sys_cache.get(position).getUrl();
     }
 
     @Override
@@ -79,10 +94,17 @@ public class LandscapeRowAdapter extends BaseAdapter {
             holder = (ViewHolder)view.getTag();
         }
 
-        loadBitmap(holder.left, urls.get(position * 4));
-        loadBitmap(holder.leftCenter, urls.get(position * 4 + 1));
-        loadBitmap(holder.rightCenter, urls.get(position * 4 + 2));
-        loadBitmap(holder.right, urls.get(position * 4 + 3));
+        if(offline) {
+            holder.left.setImageBitmap(ThumbnailUtils.extractThumbnail(sys_cache.get(position * 4).getBitmap(), (int)(width * 0.2), (int)(width * 0.2)));
+            holder.leftCenter.setImageBitmap(ThumbnailUtils.extractThumbnail(sys_cache.get(position * 4 + 1).getBitmap(), (int)(width * 0.2), (int)(width * 0.2)));
+            holder.rightCenter.setImageBitmap(ThumbnailUtils.extractThumbnail(sys_cache.get(position * 4 + 2).getBitmap(), (int)(width * 0.2), (int)(width * 0.2)));
+            holder.right.setImageBitmap(ThumbnailUtils.extractThumbnail(sys_cache.get(position * 4 + 3).getBitmap(), (int)(width * 0.2), (int)(width * 0.2)));
+        } else {
+            loadBitmap(holder.left, urls.get(position * 4));
+            loadBitmap(holder.leftCenter, urls.get(position * 4 + 1));
+            loadBitmap(holder.rightCenter, urls.get(position * 4 + 2));
+            loadBitmap(holder.right, urls.get(position * 4 + 3));
+        }
 
         return view;
     }
@@ -98,6 +120,13 @@ public class LandscapeRowAdapter extends BaseAdapter {
             DownloadTask t = (DownloadTask) new DownloadTask(view, url).execute();
             tasks.add(t);
         }
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
+                v.getContext().startActivity(myIntent);
+            }
+        });
     }
 
     private static class ViewHolder {
@@ -136,13 +165,6 @@ public class LandscapeRowAdapter extends BaseAdapter {
         protected void onPostExecute(Bitmap bitmap) {
             if (view.getTag(R.integer.prev) == url) {
                 view.setImageBitmap(ThumbnailUtils.extractThumbnail(bitmap, (int)(width * 0.2), (int)(width * 0.2)));
-                view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
-                        v.getContext().startActivity(myIntent);
-                    }
-                });
             }
         }
     }

@@ -74,7 +74,7 @@ public class PortraitRowAdapter extends BaseAdapter {
                     (ImageView) view.findViewById(R.id.rightImage)
             );
             view.setTag(holder);
-
+            /*
             holder.left.setTag(R.integer.full, fullscreen.get(2 * position));
             Log.d("YOLO", "Set f " + fullscreen.get(2 * position) + " " + Integer.toString(position));
             holder.right.setTag(R.integer.full, fullscreen.get(2 * position + 1));
@@ -92,7 +92,7 @@ public class PortraitRowAdapter extends BaseAdapter {
                     Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
                     v.getContext().startActivity(myIntent);
                 }
-            });
+            });*/
         } else {
             holder = (ViewHolder)view.getTag();
         }
@@ -105,6 +105,7 @@ public class PortraitRowAdapter extends BaseAdapter {
 
     private void loadBitmap(ImageView view, String url) {
         view.setTag(R.integer.prev, url);
+        view.setTag(R.integer.full, url.substring(0, url.length() - 4) + "_b.jpg");
         Bitmap bm = ThumbnailUtils.extractThumbnail(cache.getBitmapFromCache(url), (int)(width * 0.35), (int)(width * 0.35));
         if (bm != null) {
             view.setImageBitmap(bm);
@@ -147,6 +148,13 @@ public class PortraitRowAdapter extends BaseAdapter {
         protected void onPostExecute(Bitmap bitmap) {
             if (view.getTag(R.integer.prev) == url) {
                 view.setImageBitmap(ThumbnailUtils.extractThumbnail(bitmap, (int)(width * 0.35), (int)(width * 0.35)));
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
+                        v.getContext().startActivity(myIntent);
+                    }
+                });
             }
         }
     }

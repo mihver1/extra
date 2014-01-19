@@ -25,21 +25,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70cf9496-f5a9-4ebb-81a2-f7a2d36c4e53" name="Default" comment="ThirdOne&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/IconCache.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/ImagePage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/LandscapeRowAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/header.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/image.xml" />
-      <change type="DELETED" beforePath="C:\Users\mihver1\IdeaProjects\extra\src\ru\mihver1\android\yaph\gui\PortraitRowModel.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\mihver1\IdeaProjects\extra\src\ru\mihver1\android\yaph\gui\WebImageView.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/integers.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/themes.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values-v11/themes.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values-v14/themes.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/db/ImageStorage.java" afterPath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/db/ImageStorage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/ImagePage.java" afterPath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/ImagePage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/LandscapeRowAdapter.java" afterPath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/LandscapeRowAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/MainPage.java" afterPath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/MainPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/PortraitRowAdapter.java" afterPath="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/PortraitRowAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/rowlayout.xml" afterPath="$PROJECT_DIR$/res/layout/rowlayout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout-land/rowlayout.xml" afterPath="$PROJECT_DIR$/res/layout-land/rowlayout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -105,10 +99,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IconCache.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/IconCache.java">
+      <file leaf-file-name="ImagePage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/ImagePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+            <state line="39" column="49" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="1224">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="31" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+              <folding>
+                <element signature="e#443#461#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageStorage.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/db/ImageStorage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="6" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.88870704" vertical-offset="103" max-vertical-offset="782">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,72 +130,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainPage.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/MainPage.java">
+      <file leaf-file-name="themes.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/themes.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="11" selection-start="6014" selection-end="6014" vertical-scroll-proportion="0.7774141" vertical-offset="1684" max-vertical-offset="2499">
-              <folding>
-                <element signature="e#1727#1735#0" expanded="true" />
-                <element signature="e#5317#5347#0" expanded="true" />
-                <element signature="e#5627#6012#0" expanded="true" />
-                <element signature="e#6001#6002#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LandscapeRowAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/LandscapeRowAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="64" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="2805">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#714#728#0" expanded="true" />
-                <element signature="e#1285#1610#0" expanded="true" />
-                <element signature="e#1599#1600#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="81" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+            <state line="2" column="76" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PortraitRowAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/PortraitRowAdapter.java">
+      <file leaf-file-name="integers.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/integers.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="64" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="2278">
-              <folding>
-                <element signature="e#713#727#0" expanded="true" />
-                <element signature="e#1283#1611#0" expanded="true" />
-                <element signature="e#1600#1601#0" expanded="true" />
-              </folding>
+            <state line="2" column="36" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <file leaf-file-name="themes.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values-v14/themes.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="51" selection-start="258" selection-end="258" vertical-scroll-proportion="-2.72" vertical-offset="0" max-vertical-offset="306">
+            <state line="2" column="91" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="themes.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values-v11/themes.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="70" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="header.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/header.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="12" selection-start="424" selection-end="465" vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="323">
+            <state line="11" column="12" selection-start="424" selection-end="465" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -193,7 +181,7 @@
       <file leaf-file-name="rowlayout.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/rowlayout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="29" selection-start="586" selection-end="586" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="646">
+            <state line="15" column="29" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="646">
               <folding />
             </state>
           </provider>
@@ -205,7 +193,7 @@
       <file leaf-file-name="rowlayout.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout-land/rowlayout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="18" selection-start="40" selection-end="1787" vertical-scroll-proportion="-21.24" vertical-offset="336" max-vertical-offset="969">
+            <state line="51" column="18" selection-start="40" selection-end="1787" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
@@ -244,18 +232,22 @@
         <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/net/FlickrTopImages.java" />
         <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/WebImageView.java" />
         <option value="$PROJECT_DIR$/res/layout-land/rowlayout.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/rowlayout.xml" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/db/ImageStorage.java" />
         <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/IconCache.java" />
-        <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/ImagePage.java" />
         <option value="$PROJECT_DIR$/res/layout/image.xml" />
-        <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/LandscapeRowAdapter.java" />
-        <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/PortraitRowAdapter.java" />
         <option value="$PROJECT_DIR$/res/layout/header.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/res/values-v11/themes.xml" />
+        <option value="$PROJECT_DIR$/res/values/themes.xml" />
+        <option value="$PROJECT_DIR$/res/values-v14/themes.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/ImagePage.java" />
         <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/MainPage.java" />
+        <option value="$PROJECT_DIR$/res/values/integers.xml" />
+        <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/PortraitRowAdapter.java" />
+        <option value="$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/LandscapeRowAdapter.java" />
       </list>
     </option>
   </component>
@@ -384,6 +376,20 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extra" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extra" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -435,28 +441,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extra" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extra" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,9 +465,10 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="06d45ed0" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.0.110:5555" />
     <property name="FullScreen" value="false" />
     <property name="SearchEverywhereHistory" value="" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -524,6 +517,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -549,19 +555,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -624,7 +617,7 @@
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -684,7 +677,6 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -694,7 +686,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -706,6 +698,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
@@ -734,10 +727,108 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/IconCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/MainPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="157" column="11" selection-start="6014" selection-end="6014" vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="2499">
+          <folding>
+            <element signature="e#1727#1735#0" expanded="true" />
+            <element signature="e#5479#5509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/LandscapeRowAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="64" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="3009">
+          <folding>
+            <element signature="e#2493#2507#0" expanded="true" />
+            <element signature="e#2577#2591#0" expanded="true" />
+            <element signature="e#2666#2680#0" expanded="true" />
+            <element signature="e#2749#2763#0" expanded="true" />
+            <element signature="e#3062#3076#0" expanded="true" />
+            <element signature="e#3442#3456#0" expanded="true" />
+            <element signature="e#3823#3837#0" expanded="true" />
+            <element signature="e#4198#4212#0" expanded="true" />
+            <element signature="e#4747#4761#0" expanded="true" />
+            <element signature="e#6096#6110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="81" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="238">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/PortraitRowAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="64" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="2618">
+          <folding>
+            <element signature="e#2373#2387#0" expanded="true" />
+            <element signature="e#2519#2533#0" expanded="true" />
+            <element signature="e#2903#2917#0" expanded="true" />
+            <element signature="e#3278#3292#0" expanded="true" />
+            <element signature="e#3692#3706#0" expanded="true" />
+            <element signature="e#4895#4909#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="51" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/header.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="424" selection-end="465" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/rowlayout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="29" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="646">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout-land/rowlayout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="18" selection-start="40" selection-end="1787" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="36" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <folding />
+          <folding>
+            <element signature="e#443#461#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -762,10 +853,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="33" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="2261">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#714#728#0" expanded="true" />
-            <element signature="e#1285#1610#0" expanded="true" />
-            <element signature="e#1599#1600#0" expanded="true" />
+            <element signature="e#2493#2507#0" expanded="true" />
+            <element signature="e#2577#2591#0" expanded="true" />
+            <element signature="e#2666#2680#0" expanded="true" />
+            <element signature="e#2749#2763#0" expanded="true" />
+            <element signature="e#3062#3076#0" expanded="true" />
+            <element signature="e#3442#3456#0" expanded="true" />
+            <element signature="e#3823#3837#0" expanded="true" />
+            <element signature="e#4198#4212#0" expanded="true" />
+            <element signature="e#4747#4761#0" expanded="true" />
+            <element signature="e#6096#6110#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -781,9 +878,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="52" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="2312">
           <folding>
-            <element signature="e#713#727#0" expanded="true" />
-            <element signature="e#1283#1611#0" expanded="true" />
-            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#2373#2387#0" expanded="true" />
+            <element signature="e#2519#2533#0" expanded="true" />
+            <element signature="e#2903#2917#0" expanded="true" />
+            <element signature="e#3278#3292#0" expanded="true" />
+            <element signature="e#3692#3706#0" expanded="true" />
+            <element signature="e#4895#4909#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,25 +921,26 @@
     <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="117" column="52" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2550">
-          <folding />
+          <folding>
+            <element signature="e#1727#1735#0" expanded="true" />
+            <element signature="e#5479#5509#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/IconCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="4" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0" vertical-offset="884" max-vertical-offset="1003">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#511#525#0" expanded="false" />
-            <element signature="e#606#622#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="58" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="408">
-          <folding />
+          <folding>
+            <element signature="e#443#461#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -854,9 +955,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="17" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1819">
           <folding>
-            <element signature="e#713#727#0" expanded="true" />
-            <element signature="e#1283#1611#0" expanded="true" />
-            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#2373#2387#0" expanded="true" />
+            <element signature="e#2519#2533#0" expanded="true" />
+            <element signature="e#2903#2917#0" expanded="true" />
+            <element signature="e#3278#3292#0" expanded="true" />
+            <element signature="e#3692#3706#0" expanded="true" />
+            <element signature="e#4895#4909#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -884,14 +988,19 @@
     <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="55" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="2490">
-          <folding />
+          <folding>
+            <element signature="e#1727#1735#0" expanded="true" />
+            <element signature="e#5479#5509#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="58" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="360">
-          <folding />
+          <folding>
+            <element signature="e#443#461#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -906,9 +1015,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="27" selection-start="1961" selection-end="1961" vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="1320">
           <folding>
-            <element signature="e#713#727#0" expanded="true" />
-            <element signature="e#1283#1611#0" expanded="true" />
-            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#2373#2387#0" expanded="true" />
+            <element signature="e#2519#2533#0" expanded="true" />
+            <element signature="e#2903#2917#0" expanded="true" />
+            <element signature="e#3278#3292#0" expanded="true" />
+            <element signature="e#3692#3706#0" expanded="true" />
+            <element signature="e#4895#4909#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -928,28 +1040,14 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="36" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/rowlayout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="29" selection-start="586" selection-end="586" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="646">
+        <state line="15" column="29" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="646">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/ImagePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="72" selection-start="846" selection-end="846" vertical-scroll-proportion="0.19312602" vertical-offset="188" max-vertical-offset="884">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/image.xml">
@@ -962,58 +1060,16 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/db/ImageStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="488" selection-end="488" vertical-scroll-proportion="0.5008183" vertical-offset="0" max-vertical-offset="782">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#720#773#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/IconCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/LandscapeRowAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="64" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="2805">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#714#728#0" expanded="true" />
-            <element signature="e#1285#1610#0" expanded="true" />
-            <element signature="e#1599#1600#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="81" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/PortraitRowAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="64" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="2278">
-          <folding>
-            <element signature="e#713#727#0" expanded="true" />
-            <element signature="e#1283#1611#0" expanded="true" />
-            <element signature="e#1600#1601#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout-land/rowlayout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="18" selection-start="40" selection-end="1787" vertical-scroll-proportion="-21.24" vertical-offset="336" max-vertical-offset="969">
+        <state line="51" column="18" selection-start="40" selection-end="1787" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
@@ -1023,7 +1079,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="51" selection-start="258" selection-end="258" vertical-scroll-proportion="-2.72" vertical-offset="0" max-vertical-offset="306">
+        <state line="4" column="51" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="306">
           <folding />
         </state>
       </provider>
@@ -1033,7 +1089,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/header.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="12" selection-start="424" selection-end="465" vertical-scroll-proportion="-7.48" vertical-offset="0" max-vertical-offset="323">
+        <state line="11" column="12" selection-start="424" selection-end="465" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323">
           <folding />
         </state>
       </provider>
@@ -1041,14 +1097,104 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/values-v11/themes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="70" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/themes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="76" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values-v14/themes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="91" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="31" selection-start="443" selection-end="443" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <folding>
+            <element signature="e#443#461#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="11" selection-start="6014" selection-end="6014" vertical-scroll-proportion="0.7774141" vertical-offset="1684" max-vertical-offset="2499">
+        <state line="162" column="0" selection-start="6202" selection-end="6202" vertical-scroll-proportion="0.9443535" vertical-offset="1616" max-vertical-offset="2499">
           <folding>
             <element signature="e#1727#1735#0" expanded="true" />
-            <element signature="e#5317#5347#0" expanded="true" />
-            <element signature="e#5627#6012#0" expanded="true" />
-            <element signature="e#6001#6002#0" expanded="true" />
+            <element signature="e#5479#5509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="25" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/integers.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="36" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/ImagePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="49" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="1224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/PortraitRowAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="34" selection-start="3706" selection-end="3706" vertical-scroll-proportion="0.19476268" vertical-offset="1275" max-vertical-offset="2295">
+          <folding>
+            <element signature="e#2373#2387#0" expanded="true" />
+            <element signature="e#2519#2533#0" expanded="true" />
+            <element signature="e#2903#2917#0" expanded="true" />
+            <element signature="e#3278#3292#0" expanded="true" />
+            <element signature="e#3692#3706#0" expanded="true" />
+            <element signature="e#4895#4909#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/gui/LandscapeRowAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="42" selection-start="6110" selection-end="6110" vertical-scroll-proportion="0.91653025" vertical-offset="1786" max-vertical-offset="2550">
+          <folding>
+            <element signature="e#2493#2507#0" expanded="true" />
+            <element signature="e#2577#2591#0" expanded="true" />
+            <element signature="e#2666#2680#0" expanded="true" />
+            <element signature="e#2749#2763#0" expanded="true" />
+            <element signature="e#3062#3076#0" expanded="true" />
+            <element signature="e#3442#3456#0" expanded="true" />
+            <element signature="e#3823#3837#0" expanded="true" />
+            <element signature="e#4198#4212#0" expanded="true" />
+            <element signature="e#4747#4761#0" expanded="true" />
+            <element signature="e#6096#6110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/mihver1/android/yaph/db/ImageStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="6" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.88870704" vertical-offset="103" max-vertical-offset="782">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

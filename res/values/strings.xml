@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">flickrtop</string>
+    <string name="app_name">Flickr daily top</string>
     <string name="flickr_key">513b747dd5b952805219049941025b55</string>
     <string name="flickr_secret">9989eac5919745d4</string>
     <string name="SQL_CREATE">CREATE TABLE URLS (URL TEXT PRIMARY KEY, IMAGE BLOB)</string>

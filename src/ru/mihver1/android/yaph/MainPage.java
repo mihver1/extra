@@ -50,6 +50,7 @@ public class MainPage extends Activity {
     ArrayList<String> fullscreenUrls = new ArrayList<String>();
 
     public void getImagesFromFlickrToDB() throws ExecutionException, InterruptedException {
+        fullscreenUrls.clear();
         Log.d("YOLO", "test");
         new FlickrTopImages().execute(FLICKR_API_KEY);
         Log.d("YOLO", "test");
@@ -98,6 +99,8 @@ public class MainPage extends Activity {
                             String url = child.getAttribute("url_m");
                             answer.add(url);
                             fullscreenUrls.add(child.getAttribute("url_l"));
+                            Log.d("YOLO", "M "+url);
+                            Log.d("YOLO", "L "+child.getAttribute("url_l"));
                         }
                     }
                 }

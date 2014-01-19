@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.media.ThumbnailUtils;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.*;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -73,18 +74,22 @@ public class PortraitRowAdapter extends BaseAdapter {
                     (ImageView) view.findViewById(R.id.rightImage)
             );
             view.setTag(holder);
-            final int temp = position;
+
+            holder.left.setTag(R.integer.full, fullscreen.get(2 * position));
+            Log.d("YOLO", "Set f "+ fullscreen.get(2 * position));
+            holder.right.setTag(R.integer.full, fullscreen.get(2 * position + 1));
+            Log.d("YOLO", "Set f "+ fullscreen.get(2 * position + 1));
             holder.left.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", fullscreen.get(temp * 2));
+                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
                     v.getContext().startActivity(myIntent);
                 }
             });
             holder.right.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", fullscreen.get(temp * 2 + 1));
+                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
                     v.getContext().startActivity(myIntent);
                 }
             });
@@ -99,7 +104,7 @@ public class PortraitRowAdapter extends BaseAdapter {
     }
 
     private void loadBitmap(ImageView view, String url) {
-        view.setTag(url);
+        view.setTag(R.integer.prev, url);
         Bitmap bm = ThumbnailUtils.extractThumbnail(cache.getBitmapFromCache(url), (int)(width * 0.35), (int)(width * 0.35));
         if (bm != null) {
             view.setImageBitmap(bm);
@@ -140,7 +145,7 @@ public class PortraitRowAdapter extends BaseAdapter {
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-            if (view.getTag() == url) {
+            if (view.getTag(R.integer.prev) == url) {
                 view.setImageBitmap(ThumbnailUtils.extractThumbnail(bitmap, (int)(width * 0.35), (int)(width * 0.35)));
             }
         }

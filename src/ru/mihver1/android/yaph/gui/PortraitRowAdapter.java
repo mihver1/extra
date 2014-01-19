@@ -74,25 +74,6 @@ public class PortraitRowAdapter extends BaseAdapter {
                     (ImageView) view.findViewById(R.id.rightImage)
             );
             view.setTag(holder);
-            /*
-            holder.left.setTag(R.integer.full, fullscreen.get(2 * position));
-            Log.d("YOLO", "Set f " + fullscreen.get(2 * position) + " " + Integer.toString(position));
-            holder.right.setTag(R.integer.full, fullscreen.get(2 * position + 1));
-            Log.d("YOLO", "Set f " + fullscreen.get(2 * position + 1));
-            holder.left.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
-                    v.getContext().startActivity(myIntent);
-                }
-            });
-            holder.right.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
-                    v.getContext().startActivity(myIntent);
-                }
-            });*/
         } else {
             holder = (ViewHolder)view.getTag();
         }

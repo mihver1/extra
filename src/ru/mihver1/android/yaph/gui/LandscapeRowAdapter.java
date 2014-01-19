@@ -75,38 +75,6 @@ public class LandscapeRowAdapter extends BaseAdapter {
                     (ImageView) view.findViewById(R.id.rightImage)
             );
             view.setTag(holder);
-            holder.left.setTag(R.integer.full, fullscreen.get(position * 4));
-            holder.leftCenter.setTag(R.integer.full, fullscreen.get(position * 4 + 1));
-            holder.rightCenter.setTag(R.integer.full, fullscreen.get(position * 4 + 2));
-            holder.right.setTag(R.integer.full, fullscreen.get(position * 4 + 3));
-            holder.left.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
-                    v.getContext().startActivity(myIntent);
-                }
-            });
-            holder.leftCenter.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
-                    v.getContext().startActivity(myIntent);
-                }
-            });
-            holder.rightCenter.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
-                    v.getContext().startActivity(myIntent);
-                }
-            });
-            holder.right.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
-                    v.getContext().startActivity(myIntent);
-                }
-            });
         } else {
             holder = (ViewHolder)view.getTag();
         }
@@ -121,6 +89,7 @@ public class LandscapeRowAdapter extends BaseAdapter {
 
     private void loadBitmap(ImageView view, String url) {
         view.setTag(R.integer.prev, url);
+        view.setTag(R.integer.full, url.substring(0, url.length() - 4) + "_b.jpg");
         Bitmap bm = ThumbnailUtils.extractThumbnail(cache.getBitmapFromCache(url), (int)(width * 0.2), (int)(width * 0.2));
         if (bm != null) {
             view.setImageBitmap(bm);
@@ -167,6 +136,13 @@ public class LandscapeRowAdapter extends BaseAdapter {
         protected void onPostExecute(Bitmap bitmap) {
             if (view.getTag(R.integer.prev) == url) {
                 view.setImageBitmap(ThumbnailUtils.extractThumbnail(bitmap, (int)(width * 0.2), (int)(width * 0.2)));
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent myIntent = new Intent(v.getContext(), ImagePage.class).putExtra("image", (String) v.getTag(R.integer.full));
+                        v.getContext().startActivity(myIntent);
+                    }
+                });
             }
         }
     }

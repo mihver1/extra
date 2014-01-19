@@ -76,9 +76,9 @@ public class PortraitRowAdapter extends BaseAdapter {
             view.setTag(holder);
 
             holder.left.setTag(R.integer.full, fullscreen.get(2 * position));
-            Log.d("YOLO", "Set f "+ fullscreen.get(2 * position));
+            Log.d("YOLO", "Set f " + fullscreen.get(2 * position) + " " + Integer.toString(position));
             holder.right.setTag(R.integer.full, fullscreen.get(2 * position + 1));
-            Log.d("YOLO", "Set f "+ fullscreen.get(2 * position + 1));
+            Log.d("YOLO", "Set f " + fullscreen.get(2 * position + 1));
             holder.left.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -66,12 +66,16 @@ public class ImagePage extends Activity {
                 return Bitmap.createScaledBitmap(temp, (int)(w * ratio), (int)(h * ratio), false);
             } catch (IOException e) {
                 return null;
+            } catch (NullPointerException e) {
+                return null;
             }
         }
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-            if (view.getTag() == url) {
+            if(bitmap == null)
+                return;
+            if(view.getTag() == url) {
                 view.setImageBitmap(bitmap);
             }
         }
